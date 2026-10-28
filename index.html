@@ -4,18 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <title>ALIGNMENT | What You Are Looking For Is Looking For You</title>
+    <title data-i18n-text="seo.title">
+      ALIGNMENT | What You Are Looking For Is Looking For You
+    </title>
     <meta
       name="description"
-      content="ALIGNMENT by Apostle Bible Davids. Discover why life responds to divine positioning, not effort alone. Explore the Alignment Combo." />
+      content="ALIGNMENT by Apostle Bible Davids. Discover why life responds to divine positioning, not effort alone. Explore the Alignment Combo."
+      data-i18n-content="seo.description" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Bible Davids Ministries" />
     <meta
       property="og:title"
-      content="ALIGNMENT | What You Are Looking For Is Looking For You" />
+      content="ALIGNMENT | What You Are Looking For Is Looking For You"
+      data-i18n-content="seo.title" />
     <meta
       property="og:description"
-      content="ALIGNMENT by Apostle Bible Davids. Discover why life responds to divine positioning, not effort alone. Explore the Alignment Combo." />
+      content="ALIGNMENT by Apostle Bible Davids. Discover why life responds to divine positioning, not effort alone. Explore the Alignment Combo."
+      data-i18n-content="seo.description" />
     <meta name="twitter:card" content="summary" />
     <noscript>
       <style>
@@ -147,6 +152,19 @@
         font-weight: 800;
         margin-top: 24px;
       }
+      .btn-2 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 23px;
+        background: #fff;
+        color: #082638;
+        border-radius: 50px;
+        padding: 18px 27px;
+        font-size: 14px;
+        font-weight: 800;
+        margin-top: 24px;
+      }
       .btn.darkbtn {
         background: var(--blue);
         color: #fff;
@@ -251,36 +269,259 @@
         margin: 20px auto;
       }
 
-      .faq {
-        max-width: 820px;
-        margin: 40px auto 0;
-      }
-      .faq details {
-        border-bottom: 1px solid #cec3b7;
-        padding: 24px 0;
-      }
-      .faq summary {
-        font-size: 18px;
-        font-weight: 800;
-        cursor: pointer;
-      }
-      .faq p {
-        font-size: 16px;
-      }
       .center {
         text-align: center;
+      }
+      /* FAQ and ministry footer */
+      .faq-section {
+        background: var(--ivory);
+      }
+      .faq-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+        gap: clamp(32px, 5vw, 72px);
+        align-items: start;
+      }
+      .faq-intro .eyebrow {
+        color: var(--teal);
+        line-height: 1.7;
+      }
+      .faq-section .faq-intro h2 {
+        color: var(--blue);
+        font-size: clamp(36px, 4vw, 58px);
+        line-height: 1.05;
+        margin: 18px 0 24px;
+      }
+      .faq-section .faq-intro p {
+        font-size: 17px;
+        margin: 0;
+      }
+      .faq {
+        min-width: 0;
+      }
+      .faq details {
+        background: #fff;
+        border: 1px solid #ded8cc;
+        margin-bottom: 12px;
+      }
+      .faq details:last-child {
+        margin-bottom: 0;
+      }
+      .faq details[open] {
+        border-color: #ad915f;
+      }
+      .faq summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 76px;
+        padding: 22px 24px;
+        color: var(--blue);
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.5;
+        list-style: none;
+        cursor: pointer;
+      }
+      .faq summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq summary:hover {
+        background: #faf8f4;
+      }
+      .faq summary:focus-visible {
+        outline-offset: -4px;
+        box-shadow: none;
+      }
+      .faq-symbol {
+        flex: 0 0 24px;
+        text-align: center;
+        color: var(--teal);
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .faq-symbol::before {
+        content: '+';
+      }
+      .faq details[open] .faq-symbol::before {
+        content: '−';
+      }
+      .faq-answer {
+        padding: 0 24px 24px;
+      }
+      .faq-section .faq-answer p {
+        font-size: 16px;
+        line-height: 1.75;
+        margin: 0;
+      }
+      .faq-answer a {
+        color: var(--teal);
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .faq details[open] .faq-answer {
+        animation: faq-reveal 180ms ease-out;
+      }
+      @keyframes faq-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .faq-cta {
+        text-align: center;
+        margin-top: 40px;
+      }
+      .faq-cta .btn {
+        margin-top: 0;
       }
       .footer {
         background: #031a27;
         color: #c9d8dd;
-        padding: 34px 0;
-        font-size: 12px;
+        padding: 64px 0 0;
+        font-size: 15px;
+        line-height: 1.7;
       }
-      .footer .wrap {
+      .footer-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.7fr) minmax(0, 1fr);
+        gap: clamp(28px, 5vw, 72px);
+        padding-bottom: 44px;
+      }
+      .footer-brand {
+        display: inline-block;
+        color: #fff;
+        font-size: 27px;
+        font-weight: 850;
+        line-height: 1.1;
+        letter-spacing: -0.045em;
+      }
+      .footer-brand span {
+        color: var(--gold);
+      }
+      .footer-brand small {
+        display: block;
+        margin-top: 10px;
+        color: #d9bc87;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        line-height: 1.6;
+      }
+      .footer h2 {
+        max-width: 360px;
+        margin: 28px 0 16px;
+        color: #fff;
+        font-size: 24px;
+        line-height: 1.3;
+        letter-spacing: -0.025em;
+      }
+      .footer-brand-column p {
+        max-width: 390px;
+        margin: 0;
+      }
+      .footer h3 {
+        margin: 0 0 18px;
+        color: #d9bc87;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        line-height: 1.7;
+      }
+      .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer nav a,
+      .footer-back-top {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 7px 0;
+      }
+      .footer a:hover {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+      .footer-bottom {
+        border-top: 1px solid #ffffff26;
+      }
+      .footer-bottom-inner {
         display: flex;
         justify-content: space-between;
-        gap: 20px;
-        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px 32px;
+        padding-block: 20px;
+        font-size: 13px;
+      }
+      .footer-bottom p {
+        margin: 0;
+      }
+      .footer-back-top {
+        flex-shrink: 0;
+        color: #d9bc87;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+      @media (max-width: 991px) {
+        .faq-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .faq-intro {
+          max-width: 600px;
+        }
+        .footer-layout {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .footer-brand-column {
+          grid-column: 1 / -1;
+        }
+        .footer-brand-column p {
+          max-width: 600px;
+        }
+      }
+      @media (max-width: 600px) {
+        .faq summary {
+          padding: 20px;
+          gap: 14px;
+          font-size: 16px;
+        }
+        .faq-answer {
+          padding: 0 20px 22px;
+        }
+        .faq-cta .btn {
+          width: 100%;
+          padding-inline: 16px;
+        }
+        .footer {
+          padding-top: 48px;
+        }
+        .footer-layout {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 32px;
+          padding-bottom: 32px;
+        }
+        .footer h3 {
+          margin-bottom: 10px;
+        }
+        .footer-bottom-inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .faq details[open] .faq-answer {
+          animation: none;
+        }
       }
       @media (max-width: 900px) {
         .two {
@@ -512,9 +753,6 @@
       .bundle article {
         border-radius: 0;
       }
-      .faq details {
-        border-bottom: 1px solid #ddd;
-      }
       .offer {
         background: #fff;
         border: 1px solid #eee;
@@ -658,9 +896,17 @@
         display: block;
         width: 100%;
         height: auto;
-        aspect-ratio: 16 / 5;
-        object-fit: contain;
+        max-width: none;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: var(--chapter-image-position, center);
+        flex-shrink: 0;
         background: var(--mid);
+      }
+      /* Keep temporary illustrations intact; replacement photos use cover above.
+         Set --chapter-image-position on an image when its subject needs reframing. */
+      .chapter-image[src^='assets/topic-'][src$='.svg'] {
+        object-fit: contain;
       }
       .chapter-content {
         padding: 24px;
@@ -686,10 +932,17 @@
         line-height: 1.65;
         margin: 12px 0 0;
       }
-      .book-cta { margin-top: 44px; text-align: center; }
-      .book-cta .btn { margin-top: 0; }
+      .book-cta {
+        margin-top: 44px;
+        text-align: center;
+      }
+      .book-cta .btn {
+        margin-top: 0;
+      }
       @media (max-width: 600px) {
-        .book-cta .btn { width: 100%; }
+        .book-cta .btn {
+          width: 100%;
+        }
       }
       #book {
         background: var(--ivory);
@@ -841,10 +1094,12 @@
           background: #e2c28e;
         }
       }
-      @media (max-width: 1100px) {
+      @media (max-width: 991px) {
         .chapter-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+      }
+      @media (max-width: 1100px) {
         .offer-layout {
           grid-template-columns: 1fr;
         }
@@ -926,9 +1181,6 @@
         .chapter-content {
           padding: 22px;
         }
-        .chapter-image {
-          aspect-ratio: 16 / 5;
-        }
         .offer-copy .ref-bundle {
           grid-template-columns: 1fr;
         }
@@ -951,6 +1203,79 @@
         }
       }
 
+      /* Central revelation: replace this URL to change the decorative panel image. */
+      .revelation-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(28px, 4vw, 56px);
+        align-items: stretch;
+      }
+      .revelation-visual {
+        --revelation-image: url('https://res.cloudinary.com/scjeyulc/image/upload/v1793187063/Choosing_the_Sunlit_Path.png');
+        min-width: 0;
+        min-height: 560px;
+        display: flex;
+        align-items: flex-end;
+        padding: clamp(28px, 3vw, 44px);
+        background-color: var(--blue);
+        background-image:
+          linear-gradient(180deg, #041b2b14 0%, #041b2b66 40%, #041b2bf2 100%),
+          var(--revelation-image);
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+      }
+      .revelation-visual .eyebrow {
+        display: block;
+        color: #ead6af;
+        line-height: 1.6;
+      }
+      #revelation .revelation-visual h2 {
+        font-size: clamp(30px, 3.2vw, 46px);
+        line-height: 1.12;
+        letter-spacing: -0.04em;
+        margin: 18px 0 0;
+        color: #fff;
+        text-shadow: 0 2px 16px #041b2b66;
+      }
+      .revelation-visual h2 span,
+      .revelation-visual h2 em {
+        display: block;
+      }
+      #revelation .revelation-visual h2 em {
+        margin-top: 10px;
+        color: #e1bf82;
+      }
+      .revelation-copy {
+        min-width: 0;
+        align-self: center;
+      }
+      .revelation-copy > p:first-child {
+        margin-top: 0;
+      }
+      .revelation-copy > p:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 991px) {
+        .revelation-layout {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 32px;
+        }
+        .revelation-visual {
+          min-height: 480px;
+          padding: 36px;
+          background-position: center 40%;
+        }
+        #revelation .revelation-visual h2 {
+          font-size: clamp(28px, 4.6vw, 46px);
+        }
+      }
+      @media (max-width: 600px) {
+        .revelation-visual {
+          min-height: 420px;
+          padding: 28px 24px;
+        }
+      }
+
       /* ALIGNMENT EXPERIENCE SECTION */
       .alignment-experience {
         background: var(--ivory);
@@ -967,6 +1292,7 @@
         margin: 0 auto clamp(32px, 5vw, 56px);
         border: 1px solid #c7a46666;
         box-shadow: 0 18px 45px #062d4015;
+        border-radius: 10px;
       }
       .alignment-experience__header {
         max-width: 1000px;
@@ -1248,17 +1574,7 @@
         }
       }
 
-      /* Audit repairs: interaction states and honest language availability. */
-      .language-status {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        padding: 10px 12px;
-        color: var(--ink);
-        font-size: 13px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
+      /* Interaction states. */
       .btn,
       .navlink {
         cursor: pointer;
@@ -1268,14 +1584,6 @@
       .navlink:active,
       .alignment-experience__button:active {
         filter: brightness(0.93);
-      }
-      .faq-eyebrow {
-        display: block;
-        text-align: center;
-      }
-      .faq summary {
-        min-height: 44px;
-        line-height: 1.5;
       }
       .mobile-navigation summary:hover,
       .mobile-navigation a:hover {
@@ -1292,66 +1600,223 @@
           text-underline-offset: 5px;
         }
       }
-      @media (max-width: 600px) {
-        .language-status {
-          padding: 10px 8px;
-          font-size: 12px;
-        }
-      }
       @media (prefers-reduced-motion: reduce) {
         .btn,
         .navlink {
           transition: none;
         }
       }
+      /* Localization: flexible text, logical spacing and Arabic reading order. */
+      #language-select {
+        width: 110px;
+        max-width: 110px;
+        min-width: 0;
+        padding: 10px 8px;
+        color: var(--ink);
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .language-feedback {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      .language-feedback--error {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 12px 6%;
+        clip-path: none;
+        white-space: normal;
+        background: var(--ivory);
+        color: var(--blue);
+      }
+      :where(
+        h1,
+        h2,
+        h3,
+        p,
+        summary,
+        .btn,
+        .navlink,
+        .alignment-experience__button
+      ) {
+        overflow-wrap: anywhere;
+      }
+      .nav > *,
+      .lang-tools,
+      .guide-copy,
+      .revelation-visual > div {
+        min-width: 0;
+      }
+      .btn,
+      .navlink,
+      .alignment-experience__button {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+      }
+      .quote {
+        border-left: 0;
+        border-inline-start: 3px solid var(--gold);
+      }
+      .book-intro__problem {
+        border-left: 1px solid #d9cdbd;
+        border-inline-start: 2px solid var(--gold);
+      }
+      .mobile-navigation nav {
+        right: auto;
+        inset-inline-end: 0;
+        text-align: start;
+      }
+      .book-intro__copy,
+      .revelation-visual,
+      .revelation-copy,
+      .chapter-content,
+      .guide-copy,
+      .alignment-experience__offer-copy,
+      .faq-intro,
+      .faq summary,
+      .faq-answer,
+      .footer {
+        text-align: start;
+      }
+      .chapter-number,
+      .alignment-experience__number {
+        direction: ltr;
+        unicode-bidi: isolate;
+      }
+      html[lang='ar'] body {
+        font-family: Tahoma, Arial, sans-serif;
+      }
+      html[lang='ar'] :is(h1, h2, h3, p, a, span, summary, small) {
+        letter-spacing: normal;
+      }
+      html[lang='ar'] .section h2,
+      html[lang='ar'] .alignment-experience__header h2 {
+        line-height: 1.5;
+      }
+      html[lang='ar'] .section h2 em {
+        font-family: Tahoma, Arial, sans-serif;
+        font-style: normal;
+      }
+      html[lang='ar'] .brand,
+      html[lang='ar'] .footer-brand {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      @media (min-width: 1201px) {
+        html:not([lang='en']) .ref-nav-links {
+          gap: 16px;
+        }
+      }
+      @media (max-width: 600px) {
+        .nav {
+          grid-template-columns: minmax(0, 1fr) auto;
+        }
+        #language-select {
+          width: 98px;
+          max-width: 98px;
+          font-size: 12px;
+        }
+      }
     </style>
+    <script src="assets/i18n-catalog.js" defer></script>
+    <script src="assets/i18n.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="top">BIBLE DAVIDS MINISTRIES PRESENTS</div>
+    <a
+      class="skip-link"
+      href="#main-content"
+      data-i18n-text="accessibility.skip"
+      >Skip to content</a
+    >
+    <div class="top" data-i18n-text="common.presentedBy">
+      BIBLE DAVIDS MINISTRIES PRESENTS
+    </div>
     <header class="nav wrap">
-      <a class="brand" href="#home"
+      <a class="brand" dir="ltr" lang="en" translate="no" href="#home"
         >ALIGNMENT<span>.</span><small>BIBLE DAVIDS MINISTRIES</small></a
       >
-      <nav class="ref-nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#revelation">The Revelation</a
-        ><a href="#book">Inside the Book</a><a href="#offer">The Combo</a
-        ><a href="#author">Your Guide</a><a href="#faq">Questions</a>
+      <nav
+        class="ref-nav-links"
+        aria-label="Main navigation"
+        data-i18n-aria-label="accessibility.mainNavigation">
+        <a href="#home" data-i18n-text="navigation.home">Home</a
+        ><a href="#revelation" data-i18n-text="navigation.revelation"
+          >The Revelation</a
+        ><a href="#book" data-i18n-text="navigation.insideBook"
+          >Inside the Book</a
+        ><a href="#offer" data-i18n-text="navigation.combo">The Combo</a
+        ><a href="#author" data-i18n-text="navigation.guide">Your Guide</a
+        ><a href="#faq" data-i18n-text="navigation.questions">Questions</a>
       </nav>
       <div class="lang-tools">
-        <span
-          class="language-status"
-          lang="en"
-          title="English only. Translations are not yet available."
-          >English</span
+        <select
+          id="language-select"
+          aria-label="Language"
+          disabled
+          data-i18n-aria-label="accessibility.languageSelector">
+          <option value="en" lang="en">English</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="es" lang="es">Español</option>
+          <option value="pt" lang="pt">Português</option>
+          <option value="ar" lang="ar">العربية</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="it" lang="it">Italiano</option></select
         ><a
           class="navlink"
           href="#offer"
           data-combo-purchase
           rel="noopener noreferrer"
+          data-i18n-text="buttons.exploreComboShort"
           >EXPLORE THE COMBO ↗</a
         >
         <details class="mobile-navigation">
-          <summary>Menu</summary>
-          <nav aria-label="Mobile navigation">
-            <a href="#home">Home</a>
-            <a href="#revelation">The Revelation</a>
-            <a href="#book">Inside the Book</a>
-            <a href="#journey">The Journey</a>
-            <a href="#author">Your Guide</a>
-            <a href="#offer">The Combo</a>
-            <a href="#faq">Questions</a>
+          <summary data-i18n-text="navigation.menu">Menu</summary>
+          <nav
+            aria-label="Mobile navigation"
+            data-i18n-aria-label="accessibility.mobileNavigation">
+            <a href="#home" data-i18n-text="navigation.home">Home</a>
+            <a href="#revelation" data-i18n-text="navigation.revelation"
+              >The Revelation</a
+            >
+            <a href="#book" data-i18n-text="navigation.insideBook"
+              >Inside the Book</a
+            >
+            <a href="#offer" data-i18n-text="navigation.journey">The Journey</a>
+            <a href="#author" data-i18n-text="navigation.guide">Your Guide</a>
+            <a href="#offer" data-i18n-text="navigation.combo">The Combo</a>
+            <a href="#faq" data-i18n-text="navigation.questions">Questions</a>
           </nav>
         </details>
       </div>
     </header>
+    <p
+      id="language-feedback"
+      class="language-feedback"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      data-load-error="This language could not be loaded. English is displayed. Please try again."
+      data-changed="Language changed to {language}."></p>
     <main id="main-content" tabindex="-1">
       <section class="hero ref-hero" id="home">
         <div class="wrap ref-hero-inner">
-          <span class="eyebrow">BIBLE DAVIDS MINISTRIES PRESENTS</span>
-          <h1>ALIGNMENT</h1>
-          <h2>WHAT YOU ARE LOOKING FOR<br />IS LOOKING FOR YOU.</h2>
-          <p class="ref-lead">
+          <span class="eyebrow" data-i18n-text="common.presentedBy"
+            >BIBLE DAVIDS MINISTRIES PRESENTS</span
+          >
+          <h1 dir="ltr" lang="en" translate="no">ALIGNMENT</h1>
+          <h2 data-i18n-text="hero.headingLead hero.headingEnd">
+            WHAT YOU ARE LOOKING FOR<br />IS LOOKING FOR YOU.
+          </h2>
+          <p class="ref-lead" data-i18n-text="hero.intro">
             Life does not respond to effort alone. It responds to position.
             Discover the divine order behind destiny, provision and opportunity.
           </p>
@@ -1363,7 +1828,9 @@
               preload="metadata"
               poster="assets/alignment-cover.jpg"
               aria-label="ALIGNMENT campaign video"
-              aria-describedby="hero-video-error">
+              aria-describedby="hero-video-error"
+              data-i18n-text="hero.videoFallback"
+              data-i18n-aria-label="accessibility.video">
               Your browser does not support HTML5 video playback.
             </video>
             <img
@@ -1372,7 +1839,8 @@
               width="501"
               height="760"
               alt="ALIGNMENT book cover by Apostle Bible Davids"
-              hidden />
+              hidden
+              data-i18n-alt="hero.posterAlt" />
           </div>
           <noscript>
             <p>
@@ -1380,7 +1848,11 @@
               and purchase through the offer below.
             </p>
           </noscript>
-          <p id="hero-video-error" role="status" hidden>
+          <p
+            id="hero-video-error"
+            role="status"
+            hidden
+            data-i18n-text="hero.videoError">
             The video could not be loaded. Please try again later.
           </p>
           <a
@@ -1388,9 +1860,12 @@
             href="#offer"
             data-combo-purchase
             rel="noopener noreferrer"
+            data-i18n-text="buttons.exploreCombo"
             >EXPLORE THE ALIGNMENT COMBO ↗</a
           >
-          <p class="ref-small">DISCOVER THE REVELATION · FIND YOUR POSITION</p>
+          <p class="ref-small" data-i18n-text="hero.caption">
+            DISCOVER THE REVELATION · FIND YOUR POSITION
+          </p>
         </div>
       </section>
       <section
@@ -1399,27 +1874,45 @@
         id="problem">
         <div class="wrap book-intro__layout">
           <div class="book-intro__copy">
-            <span class="eyebrow">INTRODUCING THE ALIGNMENT BOOK</span>
-            <h2>Faithful. Diligent.<br /><em>Yet Frustrated?</em></h2>
-            <p>
+            <span class="eyebrow" data-i18n-text="bookIntro.eyebrow"
+              >INTRODUCING THE ALIGNMENT BOOK</span
+            >
+            <h2 data-i18n-text="bookIntro.headingLead">
+              Faithful. Diligent.<br /><em
+                data-i18n-text="bookIntro.headingEmphasis"
+                >Yet Frustrated?</em
+              >
+            </h2>
+            <p data-i18n-text="bookIntro.intro">
               You can be sincere, disciplined and prayerful—and still experience
               friction when effort is applied outside the right position.
             </p>
             <div class="book-intro__problems">
-              <div class="book-intro__problem">
+              <div
+                class="book-intro__problem"
+                data-i18n-text="bookIntro.problems.progress">
                 You are busy, but not advancing.
               </div>
-              <div class="book-intro__problem">
+              <div
+                class="book-intro__problem"
+                data-i18n-text="bookIntro.problems.results">
                 Your effort produces diminishing returns.
               </div>
-              <div class="book-intro__problem">
+              <div
+                class="book-intro__problem"
+                data-i18n-text="bookIntro.problems.peace">
                 Peace is thinning, despite your commitment.
               </div>
-              <div class="book-intro__problem">
+              <div
+                class="book-intro__problem"
+                data-i18n-text="bookIntro.problems.opportunities">
                 Doors seem close, but never quite connect.
               </div>
             </div>
-            <a class="btn book-intro__cta" href="#offer"
+            <a
+              class="btn book-intro__cta"
+              href="#offer"
+              data-i18n-text="buttons.discoverBook"
               >DISCOVER THE ALIGNMENT BOOK ↗</a
             >
           </div>
@@ -1430,28 +1923,37 @@
               height="760"
               alt="ALIGNMENT book cover by Apostle Bible Davids: What You Are Looking For Is Looking For You"
               loading="lazy"
-              decoding="async" />
+              decoding="async"
+              data-i18n-alt="bookIntro.coverAlt" />
           </div>
         </div>
       </section>
-      <section class="alignment-experience" id="journey">
+      <section class="alignment-experience" id="offer">
         <div class="alignment-experience__container">
           <img
             class="alignment-experience__image"
-            src="assets/alignment-combo.jpg"
+            src="https://res.cloudinary.com/scjeyulc/image/upload/v1793190444/Alignment_Course_Audiobook_Desk_Setup.png"
             width="960"
             height="640"
             loading="lazy"
             decoding="async"
-            alt="ALIGNMENT Combo promotional artwork featuring Apostle Bible Davids with book, digital reading and audio formats" />
+            alt="ALIGNMENT Combo promotional artwork featuring Apostle Bible Davids with book, digital reading and audio formats"
+            data-i18n-alt="experience.imageAlt" />
           <header class="alignment-experience__header">
-            <span class="alignment-experience__eyebrow"
+            <span
+              class="alignment-experience__eyebrow"
+              data-i18n-text="experience.eyebrow"
               >THE COMPLETE ALIGNMENT EXPERIENCE</span
             >
-            <h2>
-              Everything You Need to <span>Walk in Divine Alignment.</span>
+            <h2 data-i18n-text="experience.headingLead">
+              Everything You Need to
+              <span data-i18n-text="experience.headingEmphasis"
+                >Walk in Divine Alignment.</span
+              >
             </h2>
-            <p class="alignment-experience__intro">
+            <p
+              class="alignment-experience__intro"
+              data-i18n-text="experience.intro">
               Discover why destiny, provision, authority and opportunity are
               connected to where you stand in God's order.
             </p>
@@ -1459,35 +1961,43 @@
           <div class="alignment-experience__grid">
             <article class="alignment-experience__card">
               <span class="alignment-experience__number">01</span>
-              <h3>Recognize</h3>
-              <p>Identify where effort, peace and progress are out of sync.</p>
+              <h3 data-i18n-text="experience.recognize.title">Recognize</h3>
+              <p data-i18n-text="experience.recognize.description">
+                Identify where effort, peace and progress are out of sync.
+              </p>
             </article>
             <article class="alignment-experience__card">
               <span class="alignment-experience__number">02</span>
-              <h3>Locate</h3>
-              <p>Examine timing, identity, relationships and assignment.</p>
+              <h3 data-i18n-text="experience.locate.title">Locate</h3>
+              <p data-i18n-text="experience.locate.description">
+                Examine timing, identity, relationships and assignment.
+              </p>
             </article>
             <article class="alignment-experience__card">
               <span class="alignment-experience__number">03</span>
-              <h3>Realign</h3>
-              <p>
+              <h3 data-i18n-text="experience.realign.title">Realign</h3>
+              <p data-i18n-text="experience.realign.description">
                 Restore divine order through awareness, repentance and
                 obedience.
               </p>
             </article>
             <article class="alignment-experience__card">
               <span class="alignment-experience__number">04</span>
-              <h3>Remain</h3>
-              <p>
+              <h3 data-i18n-text="experience.remain.title">Remain</h3>
+              <p data-i18n-text="experience.remain.description">
                 Build the daily discipline of living in your assigned position.
               </p>
             </article>
           </div>
           <div class="alignment-experience__offer">
             <div class="alignment-experience__offer-copy">
-              <span>THE ALIGNMENT EXPERIENCE</span>
-              <h3>Stop Chasing. Start Positioning.</h3>
-              <p>
+              <span data-i18n-text="experience.offer.eyebrow"
+                >THE ALIGNMENT EXPERIENCE</span
+              >
+              <h3 data-i18n-text="experience.offer.heading">
+                Stop Chasing. Start Positioning.
+              </h3>
+              <p data-i18n-text="experience.offer.description">
                 Explore the ALIGNMENT Combo and discover the resources available
                 for your journey.
               </p>
@@ -1496,17 +2006,73 @@
               href="#offer"
               data-combo-purchase
               rel="noopener noreferrer"
-              class="alignment-experience__button">
+              class="alignment-experience__button"
+              data-i18n-text="buttons.exploreComboLabel">
               EXPLORE THE ALIGNMENT COMBO <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
       </section>
+
+      <section
+        class="section"
+        id="revelation"
+        aria-labelledby="revelation-heading">
+        <div class="wrap two revelation-layout">
+          <div class="revelation-visual">
+            <div>
+              <span class="eyebrow" data-i18n-text="revelation.eyebrow"
+                >THE CENTRAL REVELATION</span
+              >
+              <h2 id="revelation-heading">
+                <span data-i18n-text="revelation.headingLead"
+                  >Nothing Is Missing.</span
+                >
+                <em data-i18n-text="revelation.headingEmphasis"
+                  >Something Is Misplaced.</em
+                >
+              </h2>
+            </div>
+          </div>
+          <div class="revelation-copy">
+            <p data-i18n-text="revelation.origin">
+              In 2019, while seeking God for provision and direction during a
+              project in Toronto, Apostle Bible Davids received an insight that
+              reshaped his understanding of destiny:
+            </p>
+            <div class="quote">
+              <p data-i18n-text="revelation.quote">
+                “Everything you need already exists. It now has to come into
+                alignment.”
+              </p>
+            </div>
+            <h3 data-i18n-text="chapters.chapterOne.title">
+              The Law of Alignment
+            </h3>
+            <p data-i18n-text="revelation.law">
+              Life does not respond to effort alone. It responds to position.
+              Alignment is the right person, in the right place, at the right
+              time, doing the right things, with the right people, for the
+              purpose heaven designed.
+            </p>
+            <p data-i18n-text="revelation.position">
+              The issue is not always absence. Sometimes what you need
+              exists—but you are not yet positioned to receive it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="book">
         <div class="wrap">
-          <span class="eyebrow">INSIDE THE BOOK</span>
-          <h2>The Invisible Architecture <em>of Destiny.</em></h2>
-          <p>
+          <span class="eyebrow" data-i18n-text="chapters.eyebrow"
+            >INSIDE THE BOOK</span
+          >
+          <h2 data-i18n-text="chapters.headingLead">
+            The Invisible Architecture
+            <em data-i18n-text="chapters.headingEmphasis">of Destiny.</em>
+          </h2>
+          <p data-i18n-text="chapters.intro">
             The book's real framework—not a generic personal-development
             formula.
           </p>
@@ -1514,16 +2080,19 @@
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-alignment.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195682/WhatsApp_Image_1405-08-06_at_14.52.48_2.jpg"
                 alt="Compass pointing toward a fixed center"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterOne.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">01 / ALIGNMENT</span>
-                <h3>The Law of Alignment</h3>
-                <p>
+                <h3 data-i18n-text="chapters.chapterOne.title">
+                  The Law of Alignment
+                </h3>
+                <p data-i18n-text="chapters.chapterOne.description">
                   Why life is aligned rather than found; position before
                   manifestation.
                 </p>
@@ -1532,61 +2101,79 @@
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-purpose.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195682/WhatsApp_Image_1405-08-06_at_14.52.48_3.jpg"
                 alt="Coordinates marking a position"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterTwo.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">02 / ALIGNMENT</span>
-                <h3>The Coordinates of Purpose</h3>
-                <p>Divine timing, seasons, territory and order.</p>
+                <h3 data-i18n-text="chapters.chapterTwo.title">
+                  The Coordinates of Purpose
+                </h3>
+                <p data-i18n-text="chapters.chapterTwo.description">
+                  Divine timing, seasons, territory and order.
+                </p>
               </div>
             </article>
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-identity.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195682/WhatsApp_Image_1405-08-06_at_14.52.48_1.jpg"
                 alt="A pillar standing on its foundation"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterThree.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">03 / ALIGNMENT</span>
-                <h3>Identity and Authority</h3>
-                <p>Standing in your true identity and assigned position.</p>
+                <h3 data-i18n-text="chapters.chapterThree.title">
+                  Identity and Authority
+                </h3>
+                <p data-i18n-text="chapters.chapterThree.description">
+                  Standing in your true identity and assigned position.
+                </p>
               </div>
             </article>
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-relationships.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195682/WhatsApp_Image_1405-08-06_at_14.52.48.jpg"
                 alt="Connected points forming a shared circle"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterFour.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">04 / ALIGNMENT</span>
-                <h3>Covenant Relationships</h3>
-                <p>Divine connections, honor and proximity.</p>
+                <h3 data-i18n-text="chapters.chapterFour.title">
+                  Covenant Relationships
+                </h3>
+                <p data-i18n-text="chapters.chapterFour.description">
+                  Divine connections, honor and proximity.
+                </p>
               </div>
             </article>
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-diagnostics.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195682/WhatsApp_Image_1405-08-06_at_14.52.49_2.jpg"
                 alt="A path returning to its center line"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterFive.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">05 / ALIGNMENT</span>
-                <h3>Misalignment Diagnostics</h3>
-                <p>
+                <h3 data-i18n-text="chapters.chapterFive.title">
+                  Misalignment Diagnostics
+                </h3>
+                <p data-i18n-text="chapters.chapterFive.description">
                   Recognizing friction, diminishing returns and loss of peace.
                 </p>
               </div>
@@ -1594,90 +2181,78 @@
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-realign.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195683/WhatsApp_Image_1405-08-06_at_14.52.49_1.jpg"
                 alt="A route leading back to its position"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterSix.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">06 / ALIGNMENT</span>
-                <h3>Returning to Position</h3>
-                <p>Repentance, obedience and restoring divine order.</p>
+                <h3 data-i18n-text="chapters.chapterSix.title">
+                  Returning to Position
+                </h3>
+                <p data-i18n-text="chapters.chapterSix.description">
+                  Repentance, obedience and restoring divine order.
+                </p>
               </div>
             </article>
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-provision.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195683/WhatsApp_Image_1405-08-06_at_14.52.49_3.jpg"
                 alt="An open book beneath rays of light"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterSeven.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">07 / ALIGNMENT</span>
-                <h3>Provision and Spiritual Power</h3>
-                <p>Why supply and authority are connected to assignment.</p>
+                <h3 data-i18n-text="chapters.chapterSeven.title">
+                  Provision and Spiritual Power
+                </h3>
+                <p data-i18n-text="chapters.chapterSeven.description">
+                  Why supply and authority are connected to assignment.
+                </p>
               </div>
             </article>
             <article class="chapter">
               <img
                 class="chapter-image"
-                src="assets/topic-destiny.svg"
+                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195684/WhatsApp_Image_1405-08-06_at_14.52.49.jpg"
                 alt="A doorway opening toward the horizon"
                 width="640"
                 height="280"
                 loading="lazy"
-                decoding="async" />
+                decoding="async"
+                data-i18n-alt="chapters.chapterEight.alt" />
               <div class="chapter-content">
                 <span class="chapter-number">08 / ALIGNMENT</span>
-                <h3>Destiny Recognition</h3>
-                <p>Readiness, preparation, placement and living aligned.</p>
+                <h3 data-i18n-text="chapters.chapterEight.title">
+                  Destiny Recognition
+                </h3>
+                <p data-i18n-text="chapters.chapterEight.description">
+                  Readiness, preparation, placement and living aligned.
+                </p>
               </div>
             </article>
           </div>
           <div class="book-cta">
-            <a class="btn" href="#offer" data-combo-purchase
-              rel="noopener noreferrer">GET THE ALIGNMENT COMBO ↗</a>
+            <a
+              class="btn"
+              href="#offer"
+              data-combo-purchase
+              rel="noopener noreferrer"
+              data-i18n-text="buttons.getCombo"
+              >GET THE ALIGNMENT COMBO ↗</a
+            >
           </div>
-          <p style="font-size: 14px">
+          <!-- <p style="font-size: 14px; margin: 30px auto 0 auto">
             The book also contains the Laws of Alignment, personal diagnostics,
             prayers, declarations and a call to live positioned.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" id="revelation">
-        <div class="wrap two">
-          <div>
-            <span class="eyebrow">THE CENTRAL REVELATION</span>
-            <h2>Nothing Is Missing.<br /><em>Something Is Misplaced.</em></h2>
-          </div>
-          <div>
-            <p>
-              In 2019, while seeking God for provision and direction during a
-              project in Toronto, Apostle Bible Davids received an insight that
-              reshaped his understanding of destiny:
-            </p>
-            <div class="quote">
-              <p>
-                “Everything you need already exists. It now has to come into
-                alignment.”
-              </p>
-            </div>
-            <h3>The Law of Alignment</h3>
-            <p>
-              Life does not respond to effort alone. It responds to position.
-              Alignment is the right person, in the right place, at the right
-              time, doing the right things, with the right people, for the
-              purpose heaven designed.
-            </p>
-            <p>
-              The issue is not always absence. Sometimes what you need
-              exists—but you are not yet positioned to receive it.
-            </p>
-          </div>
+          </p> -->
         </div>
       </section>
 
@@ -1690,18 +2265,23 @@
               height="610"
               alt="Apostle Bible Davids, author of ALIGNMENT"
               loading="lazy"
-              decoding="async" />
+              decoding="async"
+              data-i18n-alt="guide.portraitAlt" />
           </figure>
           <div class="guide-copy">
-            <span class="eyebrow">MEET YOUR GUIDE</span>
-            <h2>Meet Apostle <em>Bible Davids.</em></h2>
-            <p>
+            <span class="eyebrow" data-i18n-text="guide.eyebrow"
+              >MEET YOUR GUIDE</span
+            >
+            <h2 data-i18n-text="guide.headingLead">
+              Meet Apostle <em data-i18n-text="guide.name">Bible Davids.</em>
+            </h2>
+            <p data-i18n-text="guide.biography">
               For more than three decades, Apostle Bible Davids has taught the
               Word of God, raised disciples and equipped believers in the life
               of the Spirit. His work emphasizes divine order, spiritual
               maturity and the practical expression of biblical truth.
             </p>
-            <p>
+            <p data-i18n-text="guide.bookContext">
               ALIGNMENT draws on Scripture, personal encounters and a lifelong
               ministry of helping people recognize and walk in their God-given
               assignment.
@@ -1711,12 +2291,14 @@
               href="#offer"
               data-combo-purchase
               rel="noopener noreferrer"
+              data-i18n-text="buttons.exploreComboSentence"
               >Explore the Alignment Combo ↗</a
             >
           </div>
         </div>
       </section>
-      <section class="section cream campaign-offer" id="offer">
+
+      <!-- <section class="section cream campaign-offer" id="offer">
         <div class="wrap">
           <div class="offer">
             <div class="offer-layout">
@@ -1762,9 +2344,8 @@
                   Final package contents and regional pricing have not yet been
                   confirmed.
                 </p>
-                <!-- Canonical Shopify URL: all enhanced purchase CTAs use this destination. -->
+
                 <a
-                  id="combo-product"
                   class="btn darkbtn"
                   href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
                   data-combo-purchase
@@ -1785,68 +2366,341 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="section" id="faq">
+      </section> -->
+
+      <section
+        class="section faq-section"
+        id="faq"
+        aria-labelledby="faq-heading">
         <div class="wrap">
-          <span class="eyebrow faq-eyebrow">QUESTIONS</span>
-          <h2 class="center">Before You <em>Begin.</em></h2>
-          <div class="faq">
-            <details>
-              <summary>Is ALIGNMENT a motivational book?</summary>
-              <p>
-                No. The author describes it as a diagnostic and compass for
-                recognizing misalignment and returning to divine position.
+          <div class="faq-layout">
+            <div class="faq-intro">
+              <span class="eyebrow" data-i18n-text="faq.eyebrow"
+                >FREQUENTLY ASKED QUESTIONS</span
+              >
+              <h2 id="faq-heading" data-i18n-text="faq.heading">
+                HAVE QUESTIONS?
+              </h2>
+              <p data-i18n-text="faq.intro">
+                Everything you need to know about ALIGNMENT and the complete
+                Combo experience.
               </p>
-            </details>
-            <details>
-              <summary>What areas of life does the book address?</summary>
-              <p>
-                Divine timing, purpose, identity, relationships, provision,
-                spiritual authority, realignment, prayer and destiny
-                recognition.
-              </p>
-            </details>
-            <details>
-              <summary>What comes in the Alignment Combo?</summary>
-              <p>
-                The proposed Combo includes the book, eBook, audiobook and a
-                guided course. Final inclusions will be confirmed before launch.
-              </p>
-            </details>
-            <details>
-              <summary>When can I purchase?</summary>
-              <p>
-                Visit the official Shopify product page for current purchase
-                availability and fulfillment details.
-              </p>
-            </details>
+            </div>
+            <div class="faq">
+              <details name="alignment-faq">
+                <summary id="faq-question-1" aria-controls="faq-answer-1">
+                  <span data-i18n-text="faq.about.question"
+                    >What is ALIGNMENT: What You Are Looking For Is Looking For
+                    You about?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-1"
+                  aria-labelledby="faq-question-1">
+                  <p data-i18n-text="faq.about.answer">
+                    ALIGNMENT explores the relationship between divine position
+                    and purpose. The author describes it as a diagnostic and
+                    compass for recognizing misalignment and returning to divine
+                    position, rather than a motivational book.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-2" aria-controls="faq-answer-2">
+                  <span data-i18n-text="faq.audience.question"
+                    >Who is the ALIGNMENT book for?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-2"
+                  aria-labelledby="faq-question-2">
+                  <p data-i18n-text="faq.audience.answer">
+                    It is for readers seeking biblical understanding of purpose,
+                    identity, relationships and divine timing, and those
+                    reflecting on where they may need to return to alignment.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-3" aria-controls="faq-answer-3">
+                  <span data-i18n-text="faq.contents.question"
+                    >What will I discover inside the book?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-3"
+                  aria-labelledby="faq-question-3">
+                  <p data-i18n-text="faq.contents.answer">
+                    The book addresses divine timing, purpose, identity,
+                    relationships, provision, spiritual authority, realignment,
+                    prayer and destiny recognition. It also includes personal
+                    diagnostics, prayers and declarations.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-4" aria-controls="faq-answer-4">
+                  <span data-i18n-text="faq.package.question"
+                    >What is included in the ALIGNMENT Combo Package?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-4"
+                  aria-labelledby="faq-question-4">
+                  <p
+                    data-i18n-text="common.visitProductPrefix faq.package.suffix">
+                    Visit the
+                    <a
+                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n-text="common.productPage"
+                      >official Shopify product page</a
+                    >
+                    for the current package contents and availability.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-5" aria-controls="faq-answer-5">
+                  <span data-i18n-text="faq.formats.question"
+                    >Is ALIGNMENT available in digital or physical
+                    formats?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-5"
+                  aria-labelledby="faq-question-5">
+                  <p data-i18n-text="faq.formats.prefix faq.formats.suffix">
+                    Check the
+                    <a
+                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n-text="common.productPage"
+                      >official Shopify product page</a
+                    >
+                    for the formats currently offered and any applicable
+                    delivery information.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-6" aria-controls="faq-answer-6">
+                  <span data-i18n-text="faq.price.question"
+                    >How much does the ALIGNMENT Combo cost?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-6"
+                  aria-labelledby="faq-question-6">
+                  <p
+                    data-i18n-text="common.visitProductPrefix faq.price.suffix">
+                    Visit the
+                    <a
+                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n-text="common.productPage"
+                      >official Shopify product page</a
+                    >
+                    to see current pricing and availability for your location.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-7" aria-controls="faq-answer-7">
+                  <span data-i18n-text="faq.access.question"
+                    >How do I access my purchase?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-7"
+                  aria-labelledby="faq-question-7">
+                  <p data-i18n-text="faq.access.prefix faq.access.suffix">
+                    Please review the access and fulfillment details on the
+                    <a
+                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n-text="common.productPageAccess"
+                      >official Shopify product page</a
+                    >
+                    before purchasing.
+                  </p>
+                </section>
+              </details>
+              <details name="alignment-faq">
+                <summary id="faq-question-8" aria-controls="faq-answer-8">
+                  <span data-i18n-text="faq.pace.question"
+                    >Can I read ALIGNMENT at my own pace?</span
+                  >
+                  <span class="faq-symbol" aria-hidden="true"></span>
+                </summary>
+                <section
+                  class="faq-answer"
+                  id="faq-answer-8"
+                  aria-labelledby="faq-question-8">
+                  <p data-i18n-text="faq.pace.answer">
+                    Yes. You can read and revisit the book at your own pace,
+                    taking time to reflect on the message, personal diagnostics,
+                    prayers and declarations.
+                  </p>
+                </section>
+              </details>
+            </div>
+          </div>
+          <div class="faq-cta">
+            <a
+              id="combo-product"
+              class="btn"
+              href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+              data-combo-purchase
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n-text="buttons.getCombo"
+              >GET THE ALIGNMENT COMBO ↗</a
+            >
           </div>
         </div>
       </section>
       <section class="section dark center" id="closing">
         <div class="wrap">
-          <span class="eyebrow"
+          <span class="eyebrow" data-i18n-text="closing.eyebrow"
             >WHAT YOU ARE LOOKING FOR IS LOOKING FOR YOU</span
           >
-          <h2>
+          <h2 data-i18n-text="closing.headingLead">
             Life Opens When You Stand<br /><em
+              data-i18n-text="closing.headingEmphasis"
               >Where You Were Designed to Stand.</em
             >
           </h2>
-          <a
-            class="btn"
-            href="#offer"
-            data-combo-purchase
-            rel="noopener noreferrer"
-            >Explore the Alignment Combo ↗</a
-          >
+          <div style="display: flex; gap: 12px; justify-content: center">
+            <a
+              class="btn-2"
+              href="https://bibledavids.myshopify.com/collections/courses"
+              target="_blank"
+              >Explore More Courses ↗</a
+            >
+            <a
+              class="btn"
+              href="#offer"
+              data-combo-purchase
+              rel="noopener noreferrer"
+              data-i18n-text="buttons.exploreComboSentence"
+              >Explore the Alignment Combo ↗</a
+            >
+          </div>
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="wrap">
-        <span>© 2026 Bible Davids Ministries · ALIGNMENT</span
-        ><span>Purchase through Shopify</span>
+    <footer
+      class="footer"
+      aria-label="ALIGNMENT and Bible Davids Ministries"
+      data-i18n-aria-label="accessibility.footer">
+      <div class="wrap footer-layout">
+        <div class="footer-brand-column">
+          <a
+            class="footer-brand"
+            dir="ltr"
+            lang="en"
+            translate="no"
+            href="#home"
+            >ALIGNMENT<span>.</span><small>BIBLE DAVIDS MINISTRIES</small></a
+          >
+          <h2 data-i18n-text="footer.missionLead footer.missionEnd">
+            FIND YOUR POSITION.<br />WALK IN PURPOSE.
+          </h2>
+          <p data-i18n-text="footer.description">
+            Discover why purpose, provision and opportunity are connected to
+            where you stand in God's order. ALIGNMENT is a compass for
+            recognizing misalignment and returning to divine position.
+          </p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h3 id="footer-explore" data-i18n-text="footer.explore">EXPLORE</h3>
+          <ul>
+            <li><a href="#home" data-i18n-text="navigation.home">Home</a></li>
+            <li>
+              <a href="#revelation" data-i18n-text="navigation.revelation"
+                >The Revelation</a
+              >
+            </li>
+            <li>
+              <a href="#book" data-i18n-text="navigation.insideBook"
+                >Inside the Book</a
+              >
+            </li>
+            <li>
+              <a href="#offer" data-i18n-text="navigation.combo">The Combo</a>
+            </li>
+            <li>
+              <a href="#author" data-i18n-text="navigation.guide">Your Guide</a>
+            </li>
+            <li>
+              <a href="#faq" data-i18n-text="navigation.questions">Questions</a>
+            </li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-resources">
+          <h3 id="footer-resources" data-i18n-text="footer.resources">
+            MINISTRY &amp; RESOURCES
+          </h3>
+          <ul>
+            <li>
+              <a
+                href="https://bibledavids.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Bible Davids Ministries ↗</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+                data-combo-purchase
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n-text="footer.combo"
+                >ALIGNMENT Combo Package ↗</a
+              >
+            </li>
+            <li>
+              <a href="#faq" data-i18n-text="footer.faq"
+                >Frequently Asked Questions</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="wrap footer-bottom-inner">
+          <p
+            data-i18n-text="footer.copyrightSymbol footer.copyrightAttribution">
+            © <span id="copyright-year">2026</span> Bible Davids Ministries ·
+            ALIGNMENT. All rights reserved.
+          </p>
+          <a
+            class="footer-back-top"
+            href="#home"
+            data-i18n-text="footer.backToTop"
+            >BACK TO TOP ↑</a
+          >
+        </div>
       </div>
     </footer>
     <script>
@@ -1910,7 +2764,28 @@
           mobileNavigation.open = false;
         }
       });
-      // Translations are not published. Keep the English document language accurate.
+      const faqItems = [...document.querySelectorAll('.faq details')];
+      for (const item of faqItems) {
+        item
+          .querySelector('summary')
+          .setAttribute('aria-expanded', String(item.open));
+        item.addEventListener('toggle', () => {
+          // The name attribute groups modern browsers; this also supports older Safari.
+          if (item.open) {
+            for (const other of faqItems) {
+              if (other !== item) other.open = false;
+            }
+          }
+          for (const entry of faqItems) {
+            entry
+              .querySelector('summary')
+              .setAttribute('aria-expanded', String(entry.open));
+          }
+        });
+      }
+      document.getElementById('copyright-year').textContent =
+        new Date().getFullYear();
+      // Translation initialization runs from the deferred assets/i18n.js script.
     </script>
   </body>
 </html>

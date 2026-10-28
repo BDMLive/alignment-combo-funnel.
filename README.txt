@@ -18,7 +18,9 @@ PRODUCTION DESTINATIONS
 - heroVideoUrl is defined once in campaignConfig. The HTML5 player uses native
   controls, playsinline, metadata preload, and no autoplay. On failure or when
   JavaScript is disabled, the original book poster remains visible.
-- The page is English only. It does not advertise unavailable translations.
+- The navbar supports English, French, Spanish, Portuguese, Arabic (RTL), German
+  and Italian with saved language preferences. See I18N.md for dictionary editing,
+  local preview, test commands, editorial review and international SEO notes.
 
 PRESERVED CONTENT AND ASSETS
 - The eight topic cards preserve the existing book framework; they are not a

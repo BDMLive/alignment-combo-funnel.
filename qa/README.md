@@ -44,3 +44,60 @@ screen readers, native fullscreen media and real checkout/fulfillment remain
 manual review tasks. Screenshot styling hides sticky navigation only for section
 captures; full-page screenshots retain it. No production DOM/styles are changed
 by these test-only screenshot overrides.
+
+## Focused FAQ and footer check
+
+Run the new audit from the project root (it supports opening the local file,
+so a preview server is optional):
+
+```sh
+NODE_PATH=/tmp/alignment-qa-tools/node_modules node qa/faq-footer.cjs
+```
+
+It requires `playwright` and `@axe-core/playwright` in the temporary tooling
+folder. It checks all eight questions with Enter/Space and pointer interaction,
+single-open behavior (including the JavaScript fallback without native grouping),
+ARIA state, answer visibility, plus/minus icons, purchase and ministry popup URLs,
+all footer anchors and sticky-header clearance, dynamic year, reduced motion,
+no-JavaScript fallback, scoped accessibility/contrast, and browser errors at
+375, 390, 768, 1024, and 1440 pixels. External popup destinations are intercepted;
+this does not verify Shopify fulfillment or complete a purchase.
+
+For Safari-engine coverage, install and run temporary WebKit:
+
+```sh
+PLAYWRIGHT_BROWSERS_PATH=/tmp/alignment-browser-tools node /tmp/alignment-qa-tools/node_modules/playwright/cli.js install webkit
+QA_BROWSER=webkit PLAYWRIGHT_BROWSERS_PATH=/tmp/alignment-browser-tools NODE_PATH=/tmp/alignment-qa-tools/node_modules node qa/faq-footer.cjs
+```
+
+Use `QA_OUTPUT` to separate engine artifacts; defaults to `alignment-faq-footer`
+in the operating system temporary directory. Screenshots and `results.json`
+are saved there. WebKit coverage does not replace physical iOS/Safari or
+screen-reader review.
+
+Preview the website with `python3 -m http.server 8000 --bind 127.0.0.1`, then open
+`http://127.0.0.1:8000/#faq`. No build step is needed.
+
+Product details still requiring ministry confirmation: exact Combo inclusions,
+available physical/digital formats, current pricing, delivery, and access
+instructions. The official product page was rate-limited during this review;
+FAQ answers link to it rather than promise unverified details. No approved
+catalog destination exists in the ALIGNMENT project, so the footer omits
+“Explore More Courses.” The live FAQ CTA now owns `#combo-product`, restoring
+the shared purchase-link configuration after the former source was commented
+out. No unrelated campaign sections were edited.
+
+Verified 28 October 2026 in installed Chrome and Playwright WebKit 27.2 at all
+five widths above: all focused checks passed, with no JavaScript/console errors,
+no horizontal overflow, and no scoped WCAG A/AA violations from axe. CSS and
+JavaScript validation passed; HTML validation reports only the existing lowercase
+doctype convention. Desktop/mobile screenshots were visually reviewed. No
+production deployment, merge, or push was performed.
+
+## Multilingual regression check
+
+See `../I18N.md` for the localization architecture, dictionary regeneration,
+translation review requirements and multilingual QA commands. `qa/i18n.cjs`
+checks all seven languages at 320, 375, 390, 768, 1024 and 1440 pixels, including
+Arabic RTL, complete binding coverage, persistence and fallbacks, keyboard FAQs,
+anchors, secure CTAs, scroll/UI/media state and scoped accessibility.
