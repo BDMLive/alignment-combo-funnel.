@@ -22,16 +22,6 @@
       content="ALIGNMENT by Apostle Bible Davids. Discover why life responds to divine positioning, not effort alone. Explore the Alignment Combo."
       data-i18n-content="seo.description" />
     <meta name="twitter:card" content="summary" />
-    <noscript>
-      <style>
-        #hero-video {
-          display: none !important;
-        }
-        #hero-video-poster[hidden] {
-          display: block !important;
-        }
-      </style>
-    </noscript>
     <style>
       :root {
         --blue: #062d40;
@@ -842,17 +832,21 @@
       }
       .ref-hero .ref-feature {
         max-width: 750px;
+        min-height: 0;
       }
       .ref-hero .ref-feature > :is(img, video) {
-        height: 440px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
       }
       @media (max-width: 600px) {
         .ref-bundle {
           grid-template-columns: 1fr;
         }
-        .ref-hero .ref-feature > :is(img, video) {
-          height: 330px;
-        }
+      }
+
+      .ref-hero .ref-feature > video[data-playback-started] {
+        object-fit: contain;
       }
 
       /* Campaign sections: retain the existing palette and typography. */
@@ -1826,28 +1820,24 @@
               controls
               playsinline
               preload="metadata"
-              poster="assets/alignment-cover.jpg"
+              poster="https://res.cloudinary.com/scjeyulc/image/upload/v1793273968/The_Alignment_Journey.png"
               aria-label="ALIGNMENT campaign video"
               aria-describedby="hero-video-error"
               data-i18n-text="hero.videoFallback"
               data-i18n-aria-label="accessibility.video">
+              <source
+                src="https://res.cloudinary.com/scjeyulc/video/upload/v1793271716/Alignment_Intro__compressed.mp4"
+                type="video/mp4" />
               Your browser does not support HTML5 video playback.
             </video>
             <img
               id="hero-video-poster"
-              src="assets/alignment-cover.jpg"
-              width="501"
-              height="760"
-              alt="ALIGNMENT book cover by Apostle Bible Davids"
+              width="1600"
+              height="900"
+              alt="ALIGNMENT campaign video"
               hidden
-              data-i18n-alt="hero.posterAlt" />
+              data-i18n-alt="accessibility.video" />
           </div>
-          <noscript>
-            <p>
-              Video playback requires JavaScript. You can still explore the book
-              and purchase through the offer below.
-            </p>
-          </noscript>
           <p
             id="hero-video-error"
             role="status"
@@ -2046,9 +2036,7 @@
                 alignment.”
               </p>
             </div>
-            <h3 data-i18n-text="chapters.chapterOne.title">
-              The Law of Alignment
-            </h3>
+            <h3 data-i18n-text="revelation.lawHeading">The Law of Alignment</h3>
             <p data-i18n-text="revelation.law">
               Life does not respond to effort alone. It responds to position.
               Alignment is the right person, in the right place, at the right
@@ -2076,6 +2064,8 @@
             The book's real framework—not a generic personal-development
             formula.
           </p>
+          <!-- Temporary image mapping: each module retains its original numbered image.
+               Update that module’s img src and localized alt text when approved artwork is supplied. -->
           <div class="chapters chapter-grid">
             <article class="chapter">
               <img
@@ -2090,11 +2080,11 @@
               <div class="chapter-content">
                 <span class="chapter-number">01 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterOne.title">
-                  The Law of Alignment
+                  The Mystery of Alignment
                 </h3>
                 <p data-i18n-text="chapters.chapterOne.description">
-                  Why life is aligned rather than found; position before
-                  manifestation.
+                  Discover the spiritual principles of divine alignment and why
+                  being rightly positioned matters in fulfilling God's purpose.
                 </p>
               </div>
             </article>
@@ -2111,10 +2101,12 @@
               <div class="chapter-content">
                 <span class="chapter-number">02 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterTwo.title">
-                  The Coordinates of Purpose
+                  Vertical Alignment
                 </h3>
                 <p data-i18n-text="chapters.chapterTwo.description">
-                  Divine timing, seasons, territory and order.
+                  Learn how cultivating a deeper relationship with God
+                  establishes the foundation for clarity, direction, and
+                  spiritual growth.
                 </p>
               </div>
             </article>
@@ -2131,10 +2123,11 @@
               <div class="chapter-content">
                 <span class="chapter-number">03 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterThree.title">
-                  Identity and Authority
+                  Horizontal Alignment
                 </h3>
                 <p data-i18n-text="chapters.chapterThree.description">
-                  Standing in your true identity and assigned position.
+                  Understand how aligning your relationships, decisions, and
+                  daily actions with God's purpose influences your journey.
                 </p>
               </div>
             </article>
@@ -2151,10 +2144,12 @@
               <div class="chapter-content">
                 <span class="chapter-number">04 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterFour.title">
-                  Covenant Relationships
+                  The Alignment of Times and Seasons
                 </h3>
                 <p data-i18n-text="chapters.chapterFour.description">
-                  Divine connections, honor and proximity.
+                  Discover the importance of discerning divine timing,
+                  recognizing seasons, and responding appropriately to
+                  opportunities.
                 </p>
               </div>
             </article>
@@ -2171,10 +2166,12 @@
               <div class="chapter-content">
                 <span class="chapter-number">05 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterFive.title">
-                  Misalignment Diagnostics
+                  The Power of Divine Strategic Relationships
                 </h3>
                 <p data-i18n-text="chapters.chapterFive.description">
-                  Recognizing friction, diminishing returns and loss of peace.
+                  Explore how purposeful relationships, divine connections, and
+                  the right associations contribute to fulfilling your
+                  assignment.
                 </p>
               </div>
             </article>
@@ -2191,10 +2188,13 @@
               <div class="chapter-content">
                 <span class="chapter-number">06 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterSix.title">
-                  Returning to Position
+                  Detoxing Your Inner Man (Breaking Entanglements and Cleansing
+                  the Inner Life)
                 </h3>
                 <p data-i18n-text="chapters.chapterSix.description">
-                  Repentance, obedience and restoring divine order.
+                  Identify inner entanglements, unhealthy patterns, and
+                  spiritual hindrances while learning principles for cleansing
+                  and renewing your inner life.
                 </p>
               </div>
             </article>
@@ -2211,30 +2211,12 @@
               <div class="chapter-content">
                 <span class="chapter-number">07 / ALIGNMENT</span>
                 <h3 data-i18n-text="chapters.chapterSeven.title">
-                  Provision and Spiritual Power
+                  The Alignment of Destiny
                 </h3>
                 <p data-i18n-text="chapters.chapterSeven.description">
-                  Why supply and authority are connected to assignment.
-                </p>
-              </div>
-            </article>
-            <article class="chapter">
-              <img
-                class="chapter-image"
-                src="https://res.cloudinary.com/scjeyulc/image/upload/v1793195684/WhatsApp_Image_1405-08-06_at_14.52.49.jpg"
-                alt="A doorway opening toward the horizon"
-                width="640"
-                height="280"
-                loading="lazy"
-                decoding="async"
-                data-i18n-alt="chapters.chapterEight.alt" />
-              <div class="chapter-content">
-                <span class="chapter-number">08 / ALIGNMENT</span>
-                <h3 data-i18n-text="chapters.chapterEight.title">
-                  Destiny Recognition
-                </h3>
-                <p data-i18n-text="chapters.chapterEight.description">
-                  Readiness, preparation, placement and living aligned.
+                  Understand how identity, preparation, obedience, and divine
+                  positioning work together in fulfilling your God-given
+                  destiny.
                 </p>
               </div>
             </article>
@@ -2242,7 +2224,8 @@
           <div class="book-cta">
             <a
               class="btn"
-              href="#offer"
+              href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
+              target="_blank"
               data-combo-purchase
               rel="noopener noreferrer"
               data-i18n-text="buttons.getCombo"
@@ -2623,7 +2606,9 @@
             >ALIGNMENT<span>.</span><small>BIBLE DAVIDS MINISTRIES</small></a
           >
           <h2 data-i18n-text="footer.missionLead footer.missionEnd">
-            FIND YOUR POSITION.<br />WALK IN PURPOSE.
+            FIND YOUR POSITION.
+            <br />
+            WALK IN PURPOSE.
           </h2>
           <p data-i18n-text="footer.description">
             Discover why purpose, provision and opportunity are connected to
@@ -2707,8 +2692,9 @@
       // Production URLs: update these settings to change every connected CTA/player.
       const campaignConfig = Object.freeze({
         shopifyProductUrl: document.getElementById('combo-product').href,
-        heroVideoUrl:
-          'https://res.cloudinary.com/scjeyulc/video/upload/v1792490313/DELIVERANCE_BY_FIRE.....mp4',
+        // Hero media URLs are maintained together in the video markup above.
+        heroVideoUrl: document.querySelector('#hero-video source').src,
+        heroPosterUrl: document.getElementById('hero-video').poster,
       });
       for (const link of document.querySelectorAll('[data-combo-purchase]')) {
         link.href = campaignConfig.shopifyProductUrl;
@@ -2722,7 +2708,10 @@
         document.getElementById('hero-video-poster').hidden = false;
         document.getElementById('hero-video-error').hidden = false;
       });
-      heroVideo.src = campaignConfig.heroVideoUrl;
+      document.getElementById('hero-video-poster').src = campaignConfig.heroPosterUrl;
+      heroVideo.addEventListener('playing', () => {
+        heroVideo.dataset.playbackStarted = '';
+      });
       const header = document.querySelector('.nav');
       const updateHeaderOffset = () => {
         document.documentElement.style.setProperty(
