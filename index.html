@@ -149,7 +149,7 @@
         gap: 23px;
         background: #fff;
         color: #082638;
-        border-radius: 50px;
+        border-radius: 0px;
         padding: 18px 27px;
         font-size: 14px;
         font-weight: 800;
@@ -1463,6 +1463,36 @@
         }
       }
 
+      /* Targeted conversion additions; retain the existing product art. */
+      .alignment-experience__image { margin-bottom: 0; }
+      .combo-strip {
+        width: min(100%, 960px);
+        margin: 0 auto clamp(32px, 5vw, 56px);
+        padding: 26px 28px;
+        gap: 24px;
+        text-align: start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .combo-strip .alignment-experience__offer-copy { min-width: 0; }
+      .combo-strip h3 { font-size: clamp(22px, 2.4vw, 28px); margin: 10px 0; }
+      .combo-strip .alignment-experience__button { flex: 0 1 290px; }
+      .revelation-visual .revelation-cta {
+        margin-top: 24px;
+        padding: 16px 22px;
+        background: var(--gold);
+        color: var(--blue);
+        font-size: 12px;
+      }
+      .revelation-visual .revelation-cta:hover { background: #e0bd80; }
+      .faq-answer a { overflow-wrap: anywhere; }
+      .faq-section .faq-answer p + p { margin-top: 16px; }
+      @media (max-width: 767px) {
+        .combo-strip { flex-direction: column; align-items: stretch; padding: 24px 22px; }
+        .combo-strip .alignment-experience__button { flex: auto; width: 100%; }
+      }
+
       /* Book introduction: two Flexbox columns, independent of .two grids. */
       .book-intro {
         background: var(--ivory);
@@ -1929,6 +1959,14 @@
             decoding="async"
             alt="ALIGNMENT Combo promotional artwork featuring Apostle Bible Davids with book, digital reading and audio formats"
             data-i18n-alt="experience.imageAlt" />
+          <div class="alignment-experience__offer combo-strip">
+            <div class="alignment-experience__offer-copy">
+              <span data-i18n-text="experience.eyebrow">THE COMPLETE ALIGNMENT EXPERIENCE</span>
+              <h3 data-i18n-text="experience.comboHeading">Everything You Need. One Complete Package.</h3>
+              <p data-i18n-text="experience.comboFormats">E-Book + Audiobook + E-Course</p>
+            </div>
+            <a class="alignment-experience__button" href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package" data-combo-purchase target="_blank" rel="noopener noreferrer" data-i18n-text="buttons.getCombo">GET THE ALIGNMENT COMBO ↗</a>
+          </div>
           <header class="alignment-experience__header">
             <span
               class="alignment-experience__eyebrow"
@@ -1948,7 +1986,7 @@
               connected to where you stand in God's order.
             </p>
           </header>
-          <div class="alignment-experience__grid">
+          <!-- <div class="alignment-experience__grid">
             <article class="alignment-experience__card">
               <span class="alignment-experience__number">01</span>
               <h3 data-i18n-text="experience.recognize.title">Recognize</h3>
@@ -1978,7 +2016,7 @@
                 Build the daily discipline of living in your assigned position.
               </p>
             </article>
-          </div>
+          </div> -->
           <div class="alignment-experience__offer">
             <div class="alignment-experience__offer-copy">
               <span data-i18n-text="experience.offer.eyebrow"
@@ -2022,6 +2060,7 @@
                   >Something Is Misplaced.</em
                 >
               </h2>
+              <a class="btn revelation-cta" href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package" data-combo-purchase target="_blank" rel="noopener noreferrer" data-i18n-text="buttons.discoverAlignment">DISCOVER ALIGNMENT ↗</a>
             </div>
           </div>
           <div class="revelation-copy">
@@ -2438,18 +2477,7 @@
                   class="faq-answer"
                   id="faq-answer-4"
                   aria-labelledby="faq-question-4">
-                  <p
-                    data-i18n-text="common.visitProductPrefix faq.package.suffix">
-                    Visit the
-                    <a
-                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-i18n-text="common.productPage"
-                      >official Shopify product page</a
-                    >
-                    for the current package contents and availability.
-                  </p>
+                  <p data-i18n-text="faq.package.answer">The complete ALIGNMENT Combo includes three digital resources: the E-Book, Audiobook, and E-Course. Together, they provide different ways to read, listen to, and study the teachings on divine alignment.</p>
                 </section>
               </details>
               <details name="alignment-faq">
@@ -2464,18 +2492,7 @@
                   class="faq-answer"
                   id="faq-answer-5"
                   aria-labelledby="faq-question-5">
-                  <p data-i18n-text="faq.formats.prefix faq.formats.suffix">
-                    Check the
-                    <a
-                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-i18n-text="common.productPage"
-                      >official Shopify product page</a
-                    >
-                    for the formats currently offered and any applicable
-                    delivery information.
-                  </p>
+                  <p data-i18n-text="faq.formats.answer">The ALIGNMENT Combo Package is a digital product that includes an E-Book, Audiobook, and E-Course. These materials are accessed digitally, without physical delivery. Please check the official Shopify store for any separately available physical editions.</p>
                 </section>
               </details>
               <details name="alignment-faq">
@@ -2489,18 +2506,7 @@
                   class="faq-answer"
                   id="faq-answer-6"
                   aria-labelledby="faq-question-6">
-                  <p
-                    data-i18n-text="common.visitProductPrefix faq.price.suffix">
-                    Visit the
-                    <a
-                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-i18n-text="common.productPage"
-                      >official Shopify product page</a
-                    >
-                    to see current pricing and availability for your location.
-                  </p>
+                  <p data-i18n-text="faq.price.prefix faq.price.suffix">Visit the <a href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package" data-combo-purchase target="_blank" rel="noopener noreferrer" data-i18n-text="faq.price.link">official ALIGNMENT Shopify product page</a> to see the current price and complete your purchase securely. The applicable total will be displayed during checkout.</p>
                 </section>
               </details>
               <details name="alignment-faq">
@@ -2514,23 +2520,17 @@
                   class="faq-answer"
                   id="faq-answer-7"
                   aria-labelledby="faq-question-7">
-                  <p data-i18n-text="faq.access.prefix faq.access.suffix">
-                    Please review the access and fulfillment details on the
-                    <a
-                      href="https://bibledavids.myshopify.com/products/alignment-what-you-are-looking-for-is-looking-for-you-combo-package"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-i18n-text="common.productPageAccess"
-                      >official Shopify product page</a
-                    >
-                    before purchasing.
-                  </p>
+                  <p data-i18n-text="faq.access.intro">After completing your purchase through the official Shopify store, access information will be sent to the email address you provided at checkout.</p>
+<p data-i18n-text="faq.access.files">For the E-Book and Audiobook, follow the digital delivery email instructions to access or download your files.</p>
+<p data-i18n-text="faq.access.course">For the E-Course, look for an email from Supernatural Institute containing your account setup instructions. Your username will be the email address used at checkout.</p>
+<p data-i18n-text="faq.access.loginPrefix faq.access.loginSuffix">Follow the link to create your password, then sign in at <a href="https://learn.supernaturalinstitute.com" target="_blank" rel="noopener noreferrer"><bdi translate="no">learn.supernaturalinstitute.com</bdi></a> to access your purchased course.</p>
+<p data-i18n-text="faq.access.recovery">If you cannot locate your course setup email, visit the learning portal and use the 'Forgot Password' option with the email address used for your purchase.</p>
                 </section>
               </details>
               <details name="alignment-faq">
                 <summary id="faq-question-8" aria-controls="faq-answer-8">
                   <span data-i18n-text="faq.pace.question"
-                    >Can I read ALIGNMENT at my own pace?</span
+                    >Can I study ALIGNMENT at my own pace?</span
                   >
                   <span class="faq-symbol" aria-hidden="true"></span>
                 </summary>
@@ -2538,11 +2538,7 @@
                   class="faq-answer"
                   id="faq-answer-8"
                   aria-labelledby="faq-question-8">
-                  <p data-i18n-text="faq.pace.answer">
-                    Yes. You can read and revisit the book at your own pace,
-                    taking time to reflect on the message, personal diagnostics,
-                    prayers and declarations.
-                  </p>
+                  <p data-i18n-text="faq.pace.answer">Yes. You can study the digital materials at your own pace and revisit the teachings as needed. According to the official store, purchased courses include lifetime access for as long as they remain available on the learning platform.</p>
                 </section>
               </details>
             </div>
@@ -2708,7 +2704,8 @@
         document.getElementById('hero-video-poster').hidden = false;
         document.getElementById('hero-video-error').hidden = false;
       });
-      document.getElementById('hero-video-poster').src = campaignConfig.heroPosterUrl;
+      document.getElementById('hero-video-poster').src =
+        campaignConfig.heroPosterUrl;
       heroVideo.addEventListener('playing', () => {
         heroVideo.dataset.playbackStarted = '';
       });
