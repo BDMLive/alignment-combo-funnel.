@@ -140,5 +140,6 @@
   "faq.access.course": "For the E-Course, look for an email from Supernatural Institute containing your account setup instructions. Your username will be the email address used at checkout.",
   "faq.access.loginPrefix": "Follow the link to create your password, then sign in at",
   "faq.access.loginSuffix": "to access your purchased course.",
-  "faq.access.recovery": "If you cannot locate your course setup email, visit the learning portal and use the 'Forgot Password' option with the email address used for your purchase."
+  "faq.access.recovery": "If you cannot locate your course setup email, visit the learning portal and use the 'Forgot Password' option with the email address used for your purchase.",
+  "buttons.exploreCourses": "Explore More Courses ↗"
 }

@@ -155,6 +155,12 @@
         font-weight: 800;
         margin-top: 24px;
       }
+      .closing-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+      .closing-actions > a { min-width: 0; }
       .btn.darkbtn {
         background: var(--blue);
         color: #fff;
@@ -1762,15 +1768,79 @@
           gap: 16px;
         }
       }
+      /* Mobile type scale and touch targets; desktop styles remain above. */
       @media (max-width: 600px) {
-        .nav {
-          grid-template-columns: minmax(0, 1fr) auto;
-        }
+        :root { --section-heading-size: clamp(28px, 7.4vw, 36px); }
+        .nav { grid-template-columns: minmax(0, 1fr) auto; }
         #language-select {
-          width: 98px;
-          max-width: 98px;
-          font-size: 12px;
+          width: 110px;
+          max-width: 110px;
+          font-size: 16px; /* Avoid iOS zoom when using the language selector. */
+          min-height: 44px;
         }
+        .brand { font-size: clamp(15px, 4.3vw, 17px); line-height: 1.25; }
+        .brand small { line-height: 1.5; }
+        .mobile-navigation nav { width: min(260px, 88vw); }
+        .mobile-navigation a { min-height: 44px; }
+        .ref-hero { padding: 42px 0 48px; }
+        .ref-hero h1 {
+          font-size: clamp(40px, 11.5vw, 46px);
+          margin: 26px 0 20px;
+        }
+        .ref-hero h2 { font-size: clamp(24px, 6.4vw, 32px); margin-bottom: 24px; }
+        .hero .ref-lead { font-size: 16px; line-height: 1.7; margin-bottom: 28px; }
+        .hero .ref-small { font-size: 11px; line-height: 1.7; letter-spacing: 0.12em; }
+        .ref-feature { border-width: 6px; margin-bottom: 24px; }
+        .ref-main-cta { padding: 17px 16px; font-size: 13px; }
+        .section { padding: 52px 0; }
+        .section p { font-size: 16px; line-height: 1.75; }
+        .book-intro h2,
+        .guide-copy h2,
+        .faq-section .faq-intro h2,
+        .alignment-experience__header h2 { font-size: var(--section-heading-size); }
+        .book-intro__copy > p,
+        .alignment-experience__intro,
+        .faq-section .faq-intro p { font-size: 16px; line-height: 1.75; }
+        .book-intro__layout { gap: 32px; }
+        .book-intro__cta { font-size: 13px; padding: 17px 16px; }
+        .alignment-experience { padding: 52px 0; }
+        .alignment-experience__eyebrow { line-height: 1.6; margin-bottom: 16px; }
+        .alignment-experience__offer { gap: 20px; padding: 24px 22px; }
+        .alignment-experience__offer h3 { font-size: clamp(22px, 5.5vw, 26px); }
+        .alignment-experience__offer-copy > span { display: block; line-height: 1.6; }
+        .alignment-experience__button { font-size: 13px; min-height: 48px; padding: 17px 16px; }
+        .revelation-visual { padding: 26px 24px; }
+        #revelation .revelation-visual h2 { font-size: clamp(26px, 6.8vw, 32px); }
+        .revelation-visual .revelation-cta { font-size: 13px; }
+        .chapter-content { padding: 22px; }
+        .chapter-grid h3 { font-size: 20px; line-height: 1.3; }
+        .section .chapter p { font-size: 15px; line-height: 1.7; }
+        .book-cta { margin-top: 28px; }
+        .book-cta .btn,
+        .faq-cta .btn,
+        .guide-copy .btn { font-size: 13px; padding: 17px 16px; }
+        .faq-layout { gap: 28px; }
+        .faq summary { padding: 18px 16px; gap: 12px; min-height: 64px; }
+        .faq summary > span:first-child { min-width: 0; }
+        .faq-answer { padding: 0 16px 20px; }
+        .faq-section .faq-answer p { font-size: 15px; line-height: 1.75; }
+        .closing-actions { flex-direction: column; align-items: stretch; gap: 14px; margin-top: 24px; }
+        .closing-actions > a {
+          width: 100%;
+          max-width: 100%;
+          min-height: 48px;
+          margin-top: 0;
+          padding: 16px;
+          font-size: 13px;
+          line-height: 1.5;
+          text-align: center;
+          white-space: normal;
+          overflow-wrap: normal;
+        }
+        .footer-layout { gap: 24px; padding-bottom: 24px; }
+        .footer h2 { font-size: 23px; }
+        .footer-brand-column p { font-size: 15px; line-height: 1.75; }
+        .footer-bottom-inner { font-size: 12px; }
       }
     </style>
     <script src="assets/i18n-catalog.js" defer></script>
@@ -2669,11 +2739,13 @@
               >Where You Were Designed to Stand.</em
             >
           </h2>
-          <div style="display: flex; gap: 12px; justify-content: center">
+          <div class="closing-actions">
             <a
               class="btn-2"
               href="https://bibledavids.myshopify.com/collections/courses"
               target="_blank"
+              rel="noopener noreferrer"
+              data-i18n-text="buttons.exploreCourses"
               >Explore More Courses ↗</a
             >
             <a

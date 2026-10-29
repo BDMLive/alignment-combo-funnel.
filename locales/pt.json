@@ -140,5 +140,6 @@
   "faq.access.course": "Para o curso on-line, procure um e-mail do Supernatural Institute com as instruções para configurar sua conta. Seu nome de usuário será o e-mail utilizado no pagamento.",
   "faq.access.loginPrefix": "Siga o link para criar sua senha e depois entre em",
   "faq.access.loginSuffix": "para acessar o curso adquirido.",
-  "faq.access.recovery": "Se não encontrar o e-mail de configuração do curso, visite o portal de aprendizagem e use a opção “Forgot Password” (esqueci minha senha) com o e-mail utilizado na compra."
+  "faq.access.recovery": "Se não encontrar o e-mail de configuração do curso, visite o portal de aprendizagem e use a opção “Forgot Password” (esqueci minha senha) com o e-mail utilizado na compra.",
+  "buttons.exploreCourses": "Explore mais cursos ↗"
 }

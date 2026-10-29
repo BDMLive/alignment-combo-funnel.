@@ -140,5 +140,6 @@
   "faq.access.course": "Pour la formation en ligne, recherchez un e-mail de Supernatural Institute contenant les instructions de création de votre compte. Votre identifiant sera l’adresse e-mail utilisée lors du paiement.",
   "faq.access.loginPrefix": "Suivez le lien pour créer votre mot de passe, puis connectez-vous sur",
   "faq.access.loginSuffix": "pour accéder à la formation achetée.",
-  "faq.access.recovery": "Si vous ne trouvez pas l’e-mail de création de compte, rendez-vous sur le portail de formation et utilisez l’option « Forgot Password » (mot de passe oublié) avec l’adresse e-mail utilisée pour votre achat."
+  "faq.access.recovery": "Si vous ne trouvez pas l’e-mail de création de compte, rendez-vous sur le portail de formation et utilisez l’option « Forgot Password » (mot de passe oublié) avec l’adresse e-mail utilisée pour votre achat.",
+  "buttons.exploreCourses": "Découvrir d’autres formations ↗"
 }
