@@ -1,0 +1,67 @@
+name: Deploy ALIGNMENT
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Start with verify. Uploads remain locked pending first-upload approval.'
+        type: choice
+        options: [verify, diagnose, inspect-root, deploy]
+        default: verify
+        required: true
+      confirmation:
+        description: 'For a separately approved upload only: type DEPLOY ALIGNMENT.'
+        type: string
+        default: ''
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alignment-production-ftps
+  cancel-in-progress: false
+
+jobs:
+  alignment:
+    if: github.repository == 'Supernatural-Nation/alignment-web' && (github.ref == 'refs/heads/dev' || (github.ref == 'refs/heads/zeals' && (inputs.mode == 'verify' || inputs.mode == 'diagnose' || inputs.mode == 'inspect-root')))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      # Change only after verified hostname/root AND explicit first-upload approval.
+      # No push trigger: even after unlocking, deployment remains manual.
+      UPLOADS_ENABLED: 'false'
+      DEPLOY_MODE: ${{ inputs.mode == 'deploy' && 'deploy' || 'verify' }}
+      DEPLOY_APPROVED: ${{ inputs.confirmation == 'DEPLOY ALIGNMENT' && 'true' || 'false' }}
+    steps:
+      - name: Check out selected branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install lftp and trusted certificate authorities
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends lftp ca-certificates
+
+      - name: Validate and rebuild translations
+        run: node scripts/build-locales.cjs
+
+      - name: Test deployment safeguards offline
+        run: python3 -B -m unittest discover -s qa -p 'test_deploy_alignment.py'
+
+      - name: Run requested manual FTPS operation
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTPS_DIAGNOSTIC: ${{ inputs.mode == 'diagnose' }}
+          FTPS_ROOT_INSPECTION: ${{ inputs.mode == 'inspect-root' }}
+        run: |
+          if [[ "$FTPS_DIAGNOSTIC" == 'true' ]]; then
+            python3 -B scripts/deploy-alignment.py --diagnose
+          elif [[ "$FTPS_ROOT_INSPECTION" == 'true' ]]; then
+            python3 -B scripts/deploy-alignment.py --inspect-root
+          else
+            python3 -B scripts/deploy-alignment.py
+          fi
